@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { timer } from 'rxjs';
 import { Animations } from './anim/anim.module';
-const randomColor = require('randomcolor')
+const randomColor = require('randomcolor');
 
 @Component({
   selector: 'app-root',
@@ -10,12 +10,12 @@ const randomColor = require('randomcolor')
   animations: [Animations.animeTrigger1],
 })
 export class AppComponent {
-  myColor = randomColor()
-  
+  myColor = randomColor();
+
   buttonValues: number[] = [25, 50, 90];
   buttonBreaks: number[] = [2, 5, 15];
 
-  mainImage = '/assets/images/pom.png';
+  mainImage = 'assets/images/pom.png';
   myTimer: any;
   takeUserTime: any;
   mainTimer: string = '';
@@ -53,7 +53,7 @@ export class AppComponent {
     this.myTimer = timer(1000, 1000);
     this.isTimeSelected = false;
     this.takeUserTime = this.myTimer.subscribe((val: number) => {
-      this.myColor = randomColor()
+      this.myColor = randomColor();
       this.handleCalculations();
       this.seconds--;
       if (this.selectedTime == 0 && this.seconds == 0) {
