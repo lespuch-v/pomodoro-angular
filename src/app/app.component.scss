@@ -1,0 +1,256 @@
+@mixin flexDispl($justifyC, $alignIt, $flxDir) {
+  display: flex;
+  justify-content: $justifyC;
+  align-items: $alignIt;
+  flex-direction: $flxDir;
+}
+.justCenter {
+  margin: 0 auto;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.sections-container {
+  width: 600px;
+  height: 500px;
+  background-color: #f4f9f9;
+  @include flexDispl(space-evenly, center, column);
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.button-container-valus {
+  @include flexDispl(unset, unset, column);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 7px;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+}
+.image-container {
+  @include flexDispl(unset, center, column);
+}
+.timer {
+  margin: 0;
+  text-align: center;
+}
+.headings {
+  width: 500px;
+  height: 50px;
+  font-size: 3em;
+  color: orangered;
+  font-family: "Syncopate", sans-serif;
+  @include flexDispl(center, center, unset);
+  margin: 0;
+}
+.headings-container {
+  margin-bottom: 0px;
+}
+small {
+  margin: 0;
+  padding: 0;
+  font-family: "Dancing Script", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 3px;
+  font-weight: bolder;
+}
+.proc-headings {
+  text-align: right;
+  // outline: 1px solid black;
+  margin: 0;
+  padding: 0;
+  transform: translate(-90px, -10px);
+}
+.center-containe {
+  @include flexDispl(center, center, column);
+}
+.center-container {
+  @include flexDispl(space-evenly, center, row);
+  width: 300px;
+  height: 150px;
+}
+.btns {
+  margin: 10px;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  background-color: rgb(221, 221, 221);
+  border-radius: 2px;
+  font-size: 1.1em;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: transform 120ms;
+}
+.btns:hover {
+  transform: scale(1.1);
+}
+.btns:active {
+  transform: scale(1);
+}
+.btnsSelected {
+  border: 3px solid black;
+}
+
+/* Button Start */
+.button-29 {
+  align-items: center;
+  appearance: none;
+  background-image: radial-gradient(
+    100% 100% at 100% 0,
+    #518eff 0,
+    #cc9a93 100%
+  );
+  border: 0;
+  border-radius: 6px;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, rgba(58, 65, 111, 0.5) 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono", monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: all 150ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 28px;
+  margin: 10px;
+  margin-top: 60px;
+}
+
+.button-29:focus {
+  box-shadow: #3c4fe0 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #3c4fe0 0 -3px 0 inset;
+}
+
+.button-29:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #000000 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-29:active {
+  box-shadow: #3c4fe0 0 3px 7px inset;
+  transform: translateY(2px);
+}
+#myID:disabled,
+.btns:disabled {
+  background-color: rgb(158, 158, 158) !important;
+  opacity: 0.5;
+  transform: scale(1);
+  transform: translateY(0);
+  box-shadow: none;
+  cursor: default;
+}
+#userInput {
+  margin: 10px;
+  width: 120px;
+  height: 30px;
+  text-align: center;
+  border: none;
+  background-color: #dddddd;
+  border-radius: 2px;
+  font-size: 1.1em;
+  font-weight: bolder;
+  cursor: text;
+  transition: transform 120ms;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+#userInput:focus {
+  transform: scale(1.1);
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+input[type="number"] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+// DOT ANIMATIONs
+
+.lazyDot {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  background-color: rgb(235, 147, 147);
+  margin: 0.5rem;
+  animation: scaleAndChange 1.5s ease-in-out infinite;
+}
+
+@keyframes scaleAndChange {
+  0%,
+  100% {
+    background-color: rgb(255, 110, 110);
+    transform: scale(0.5);
+  }
+  40% {
+    background-color: #07deff;
+    transform: scale(1);
+  }
+  100% {
+    background-color: rgb(255, 110, 110);
+    transform: scale(0.5);
+  }
+}
+.lazyDot:nth-child(0) {
+  animation-delay: 0s;
+}
+.lazyDot:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.lazyDot:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.lazyDot:nth-child(3) {
+  animation-delay: 0.6s;
+}
+.lazyDot:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.lazyDot:nth-child(5) {
+  animation-delay: 1s;
+}
+
+
+.container-label{
+  font-size: 0.9rem;
+  font-weight: bolder;
+  letter-spacing: 1.5px;
+  color: rgb(39, 39, 59);
+}
+.myLabel{
+  // outline: 2px solid black;
+  margin-bottom: 30px;
+  font-size: 1.2em;
+
+}
